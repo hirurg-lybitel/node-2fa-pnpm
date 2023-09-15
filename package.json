@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/server.esm.js",
-    "start:debug": "node --inspect dist/server.esm.js",
+    "start": "node dist/server.js",
+    "start:debug": "node --inspect dist/server.js",
     "build": "node build.js",
     "watch": "nodemon"
   },
