@@ -1,6 +1,6 @@
 { 
     "watch": ["src"],
-    "exec": "pnpm build && pnpm start" ,
+    "exec": "pnpm build && pnpm start:debug" ,
     "ext": "js, ts, ejs",
     "env": {
         "SECRET_KEY": "supersecretkey",
