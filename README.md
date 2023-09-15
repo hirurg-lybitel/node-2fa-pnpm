@@ -1,3 +1,5 @@
-# Node.js + Two-factor Authentication (2FA) using pnpm
+# Node.js + Two-factor Authentication (2FA)
 
-Simple api for creating and using 2fa
+[Demo site](https://twofa-node.onrender.com/login)
+
+Simple api for creating and using 2fa for loggin.

@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import { appRouter } from './routers';
 import * as dotenv from 'dotenv';
 dotenv.config();
+
 declare module 'express-session' {
   interface SessionData {
     qr: string;
