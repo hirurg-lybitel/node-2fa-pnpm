@@ -1,5 +1,9 @@
 { 
     "watch": ["src"],
     "exec": "pnpm build && pnpm start" ,
-    "ext": "js, ts, ejs"
+    "ext": "js, ts, ejs",
+    "env": {
+        "SECRET_KEY": "supersecretkey",
+        "NODE_ENV": "development"
+    }
 }

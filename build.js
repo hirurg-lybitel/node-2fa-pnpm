@@ -7,9 +7,6 @@ const sharedConfig = {
   minify: true,
   sourcemap: true,
   external: Object.keys(dependencies).concat(Object.keys(peerDependencies)),
-  define: {
-    'process.env.SECRET_KEY': '"supersecretkey"'
-  }
 };
 build({
   ...sharedConfig,

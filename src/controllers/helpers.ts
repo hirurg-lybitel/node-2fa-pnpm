@@ -3,6 +3,9 @@ import { caching } from "../server";
 import { IUserData } from "../types";
 import { authenticator } from "otplib";
 import jwt from 'jsonwebtoken';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const secretKey = process.env.SECRET_KEY ?? '';
 

@@ -1,5 +1,9 @@
 # compiled output
-dist
+dist/*
+!dist/index.html
 
 # dependencies
-node_modules/
+node_modules/*
+
+# Local Netlify folder
+.netlify

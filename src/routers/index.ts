@@ -1,6 +1,9 @@
 import express from 'express';
 import { authController, restrictedPageController, signUp2faController, signUpController } from '../controllers';
 import { expressjwt } from 'express-jwt';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const secretKey = process.env.SECRET_KEY ?? '';
 
