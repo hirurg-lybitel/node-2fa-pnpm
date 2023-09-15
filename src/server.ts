@@ -31,13 +31,7 @@ app.use(session({
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
-
-if (process.env.NODE_ENV === 'development') {
-  app.use(appRouter);
-} else {
-  app.use('/.netlify/functions/server', appRouter);  
-};
-
+app.use(appRouter);
 
 app.listen(port, host, () => {
   console.log(`[ ready ] http://${host}:${port}`);
