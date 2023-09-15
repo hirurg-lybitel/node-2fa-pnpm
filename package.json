@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --inspect dist/server.js",
+    "start": "node dist/server.esm.js",
+    "start:debug": "node --inspect dist/server.esm.js",
     "build": "node build.js",
-    "deploy": "netlify deploy --prod",
     "watch": "nodemon"
   },
   "keywords": [],
