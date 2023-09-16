@@ -9,8 +9,17 @@ const post: RequestHandler = asyncWrap(async (req, res) => {
     const secret = authenticator.generateSecret();
     const issuer = 'My node 2fa example';
 
+    if (!email) {
+        console.log('[ error ] Email is empty');
+        return res.redirect('/');
+    };
+    if (!nickname) {
+        console.log('[ error ] Nickname is empty');
+        return res.redirect('/');
+    };    
+
     try {
-        caching.set(email, { email, secret });
+        caching.set(email, { email, secret, nickname });
 
         QRCode.toDataURL(
             authenticator.keyuri(email, issuer, secret),
@@ -20,6 +29,7 @@ const post: RequestHandler = asyncWrap(async (req, res) => {
                 }
     
                 req.session.qr = url;
+                req.session.base32_secret = secret;
                 req.session.email = email;
                 req.session.nickname = nickname;
             

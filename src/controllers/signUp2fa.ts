@@ -3,19 +3,20 @@ import asyncWrap from "express-async-wrap";
 import { verifyLogin } from "./helpers";
 
 const get: RequestHandler = asyncWrap(async (req, res) => {
-    const { qr } = req.session;
+    const { qr, base32_secret: base32 } = req.session;
     if (!qr) {
         return res.redirect('/');
     };
     
-    return res.render('signup-2fa.ejs', { qr })
+    return res.render('signup-2fa.ejs', { qr, base32 })
 });
 
 const post: RequestHandler = asyncWrap(async (req, res) => {
     const { email } = req.session;
 
     if (!email) {
-        return res.redirect('/')
+        console.log('[ error ] Email is empty');
+        return res.redirect('/');
     };
     
     const code = req.body.code;

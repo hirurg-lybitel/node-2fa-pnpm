@@ -12,8 +12,10 @@
   <div class="container mx-auto mt-4">
     <h1>Sign Up - Set 2FA</h1>
     <form action="/sign-up-2fa" method="POST">
-      <p>Scan the QR Code in the Authenticator app then enter the code that you see in the app in the text field and click Submit.</p>
+      <h6>Scan the QR Code in the Authenticator app then enter the code that you see in the app in the text field and click Submit.</h6>
       <img src="<%= qr %>" class="img-fluid" />
+      <h6>Or enter this code in your app:</h6>
+      <p><%= base32 %></p>
       <div class="mb-3">
         <label for="code" class="form-label">2FA Code</label>
         <input type="text" class="form-control" id="code" name="code">

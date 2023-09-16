@@ -9,6 +9,7 @@ dotenv.config();
 declare module 'express-session' {
   interface SessionData {
     qr: string;
+    base32_secret: string;
     nickname: string;
     email: string;
     token: string;

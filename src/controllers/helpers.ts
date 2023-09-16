@@ -17,7 +17,7 @@ export const verifyLogin = (email: string, code: string, req: Request, res: Resp
             return res.redirect('/');
         }
 
-        const { secret } = userData;
+        const { secret, nickname } = userData;
 
         if (!authenticator.check(code, secret)) {
             console.error('[ error ] Unavailable code');
@@ -26,7 +26,8 @@ export const verifyLogin = (email: string, code: string, req: Request, res: Resp
 
         req.session.qr = '';
         req.session.email = '';
-        req.session.token = jwt.sign(email, secretKey);
+        req.session.nickname = '';
+        req.session.token = jwt.sign({ email, nickname }, secretKey);
 
         return res.redirect('/restricted-page');
         
